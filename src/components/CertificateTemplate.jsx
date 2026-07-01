@@ -51,10 +51,6 @@ export default function CertificateTemplate({ certificate, showQR = true }) {
             >
               NINJA DELIVERIES
             </h1>
-            <div 
-              className="mx-auto bg-blue-800"
-              style={{ width: '200px', height: '2px' }}
-            ></div>
           </div>
           {showQR && (
             <img 
@@ -79,10 +75,6 @@ export default function CertificateTemplate({ certificate, showQR = true }) {
           >
             CERTIFICATE OF INTERNSHIP
           </h2>
-          <div 
-            className="mx-auto bg-gray-600"
-            style={{ width: '280px', height: '2px' }}
-          ></div>
         </div>
 
         {/* Main Content - Compact spacing */}
@@ -106,7 +98,6 @@ export default function CertificateTemplate({ certificate, showQR = true }) {
                 fontSize: '34px',
                 fontFamily: 'Times New Roman, serif',
                 color: '#1e3a8a',
-                borderBottom: '3px solid #3b82f6',
                 display: 'inline-block',
                 paddingLeft: '20px',
                 paddingRight: '20px'
@@ -156,10 +147,7 @@ export default function CertificateTemplate({ certificate, showQR = true }) {
               <span 
                 className="font-bold"
                 style={{ 
-                  fontWeight: 'bold',
-                  textDecoration: 'underline',
-                  textDecorationThickness: '2px',
-                  textUnderlineOffset: '4px'
+                  fontWeight: 'bold'
                 }}
               >
                 {certificate.internshipPeriod}
