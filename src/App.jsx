@@ -11,7 +11,6 @@ import CreateCertificate from './pages/CreateCertificate';
 import CertificateView from './pages/CertificateView';
 import VerifyCertificate from './pages/VerifyCertificate';
 import './App.css';
-
 function App() {
   return (
     <AuthProvider>
