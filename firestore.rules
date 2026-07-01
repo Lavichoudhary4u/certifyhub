@@ -1,0 +1,17 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Certificates collection
+    match /certificates/{document} {
+      // Allow public read access for certificate verification
+      allow read: if true;
+      
+      // Allow authenticated users to create and update certificates
+      allow create, update: if request.auth != null;
+      
+      // Allow users to delete only their own certificates
+      allow delete: if request.auth != null && 
+                   request.auth.uid == resource.data.createdBy;
+    }
+  }
+}

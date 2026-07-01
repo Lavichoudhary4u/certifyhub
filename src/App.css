@@ -1,0 +1,140 @@
+/* CertifyHub Custom Styles */
+
+/* Ensure proper PDF generation styles */
+#certificate-template {
+  background-color: #ffffff !important;
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+  color-adjust: exact !important;
+  font-family: 'Times New Roman', serif !important;
+}
+
+/* Ensure all elements in certificate maintain their colors and styles */
+#certificate-template * {
+  print-color-adjust: exact !important;
+  -webkit-print-color-adjust: exact !important;
+  color-adjust: exact !important;
+  box-sizing: border-box !important;
+}
+
+/* Force specific colors and fonts for PDF generation */
+#certificate-template h1,
+#certificate-template h2,
+#certificate-template h3,
+#certificate-template p,
+#certificate-template span {
+  font-family: 'Times New Roman', serif !important;
+}
+
+/* Ensure borders are preserved */
+#certificate-template div[style*="border"] {
+  border-style: solid !important;
+}
+
+/* Smooth transitions for interactive elements */
+.transition-all {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Custom scrollbar for better UX */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Loading animation improvements */
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Ensure certificate container has proper dimensions */
+#certificate-template {
+  min-height: 595px !important;
+  width: 842px !important;
+  max-width: 842px !important;
+  margin: 20px auto !important;
+  position: relative !important;
+}
+
+/* Print and PDF generation styles */
+@media print {
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  #certificate-template {
+    background: #ffffff !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    page-break-inside: avoid !important;
+    width: 842px !important;
+    height: 595px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border-radius: 8px !important;
+    transform: none !important;
+    position: relative !important;
+  }
+  
+  /* Hide non-essential elements during print */
+  nav, .no-print, button, .shadow-xl {
+    display: none !important;
+  }
+  
+  /* Ensure all certificate elements print correctly */
+  #certificate-template *,
+  #certificate-template::before,
+  #certificate-template::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+  
+  /* Ensure images print correctly */
+  #certificate-template img {
+    max-width: none !important;
+    image-rendering: auto !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+  
+  /* Force text colors */
+  #certificate-template .text-blue-800 {
+    color: #1e40af !important;
+  }
+  
+  #certificate-template .text-gray-800 {
+    color: #374151 !important;
+  }
+  
+  #certificate-template .text-gray-600 {
+    color: #6b7280 !important;
+  }
+  
+  #certificate-template .bg-blue-800 {
+    background-color: #1e40af !important;
+  }
+}
