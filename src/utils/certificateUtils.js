@@ -11,18 +11,8 @@ export const generateCertificateId = () => {
 // Generate QR code for certificate verification
 export const generateQRCode = async (certificateId) => {
   try {
-    // Automatically detect production URL
-    let baseUrl;
-    
-    // Check if we're in production (Vercel or other deployment)
-    if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
-      // Production - use current domain
-      baseUrl = window.location.origin;
-    } else {
-      // Development - use production Vercel URL
-      baseUrl = 'https://certifyhub-tan.vercel.app';
-    }
-    
+    // Always use production Vercel URL for QR codes
+    const baseUrl = 'https://certifyhub-tan.vercel.app';
     const verificationUrl = `${baseUrl}/verify/${certificateId}`;
     
     const qrCodeDataURL = await QRCode.toDataURL(verificationUrl, {
